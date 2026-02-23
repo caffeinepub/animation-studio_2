@@ -1,0 +1,22 @@
+{
+  "frontend/src/index.css": "Global styles with OKLCH color system featuring teal and orange futuristic theme, custom animations (fade-in, slide-up, scale-in), gradient utilities, glass effect using direct oklch color with opacity, and smooth transitions for all interactive elements.",
+  "frontend/tailwind.config.js": "Tailwind configuration with custom teal/orange color palette, Space Grotesk display font, extended animations (pulse-glow, fade-in, slide-up, scale-in), custom shadows (glow effects), and responsive container settings.",
+  "frontend/src/App.tsx": "Main application component managing video upload workflow state (file, style, intensity, processing progress), rendering all sections (Hero, Upload, Style Selector, Preview, Pricing, Testimonials, FAQ), and wrapping with ThemeProvider and Toaster.",
+  "frontend/src/components/Header.tsx": "Sticky header with logo, navigation menu (desktop and mobile), theme toggle, and Internet Identity authentication integration with smooth scroll navigation to sections.",
+  "frontend/src/components/Hero.tsx": "Hero section with background image overlay, headline \"Turn Any Video Into Stunning Animation\", dual CTA buttons, and statistics display (10K+ videos, 6 styles, HD quality).",
+  "frontend/src/components/VideoUpload.tsx": "Drag-and-drop video upload component accepting MP4, MOV, and AVI formats, displaying uploaded file details with remove functionality, and styled with glass effect card.",
+  "frontend/src/components/StyleSelector.tsx": "Grid of 6 animation style cards (cartoon, anime, pixar, whiteboard, comic, watercolor) with thumbnails, selection highlighting, and hover effects.",
+  "frontend/src/components/IntensitySlider.tsx": "Animation intensity control with slider component (0-100), dynamic label (Subtle/Moderate/Intense), and descriptive text explaining the effect.",
+  "frontend/src/components/ComparisonPreview.tsx": "Side-by-side before/after video comparison display using the comparison demo image, with HD quality badge on the animated preview.",
+  "frontend/src/components/ProgressIndicator.tsx": "Animated progress bar with percentage display, dynamic status messages (analyzing, applying, rendering, finalizing), and loading spinner.",
+  "frontend/src/components/DownloadButton.tsx": "Prominent download button with HD badge, gradient styling, hover effects, and toast notification on click.",
+  "frontend/src/components/HowItWorks.tsx": "Four-step process section (Upload, Choose Style, Animate, Download) with icons, numbered cards, and staggered animations.",
+  "frontend/src/components/PricingPlans.tsx": "Three-tier pricing cards (Free, Pro, Studio) with feature lists, popular badge, and differentiated styling with hover effects.",
+  "frontend/src/components/Testimonials.tsx": "Grid of 6 user testimonials with avatars, 5-star ratings, names, roles, and animated cards with hover effects.",
+  "frontend/src/components/FAQ.tsx": "Accordion-based FAQ section with 7 questions covering formats, processing time, commercial use, styles, trials, quality, and cancellation.",
+  "frontend/src/components/ThemeToggle.tsx": "Theme switcher button with sun/moon icons that toggles between light and dark modes using next-themes.",
+  "frontend/src/components/Footer.tsx": "Footer with brand info, navigation links (Product, Company, Legal), social media icons from react-icons/si, copyright notice, and caffeine.ai attribution with UTM tracking; Sparkles icon correctly imported from lucide-react.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks file for backend interactions; currently minimal with useBackendStatus hook since backend has no methods.",
+  "frontend/index.html": "Production-ready HTML entry point with comprehensive meta tags for SEO, Open Graph, Twitter cards, theme color, and preconnect to Internet Identity service.",
+  "frontend/src/main.tsx": "Application entry point with production-optimized React Query configuration including proper stale times, cache management, retry logic, and refetch strategies."
+}

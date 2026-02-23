@@ -1,0 +1,72 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-23T14:16:17.032Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 4,
+    "implemented": 1,
+    "items": [
+      {
+        "id": "REQ-17",
+        "summary": "Configure the application for production deployment with appropriate canister settings and environment variables",
+        "status": "missing",
+        "plannedFiles": [
+          "frontend/vite.config.ts",
+          "frontend/.env.production"
+        ],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-18",
+        "summary": "Ensure all frontend assets are optimized and minified for production deployment",
+        "status": "missing",
+        "plannedFiles": [
+          "frontend/tailwind.config.js",
+          "frontend/vite.config.ts",
+          "frontend/src/index.css"
+        ],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-19",
+        "summary": "Verify all Internet Identity authentication flows work correctly in production environment",
+        "status": "missing",
+        "plannedFiles": [
+          "frontend/src/hooks/useInternetIdentity.ts",
+          "frontend/src/components/Header.tsx"
+        ],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-20",
+        "summary": "Ensure all external links and resources use production-ready URLs and configurations",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/hooks/useActor.ts",
+          "frontend/src/components/Footer.tsx",
+          "frontend/index.html",
+          "frontend/src/main.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/index.html"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "build-template/README.md",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/index.html",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Deploy Animation Studio to Production",
+  "requirements": [
+    {
+      "id": "REQ-17",
+      "summary": "Configure frontend build settings and environment for production deployment",
+      "acceptanceCriteria": [
+        "Application is configured for production environment",
+        "All canister settings are optimized for live deployment",
+        "Build artifacts are production-ready"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/vite.config.ts",
+          "operation": "modify",
+          "description": "Update Vite configuration to optimize production builds with proper chunking strategy, minification settings, and asset optimization. Ensure environment variables are correctly handled for production canister IDs."
+        },
+        {
+          "path": "frontend/.env.production",
+          "operation": "create",
+          "description": "Create production environment file containing production canister IDs and Internet Identity configuration for mainnet deployment."
+        }
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "summary": "Optimize and minify all frontend assets for production deployment",
+      "acceptanceCriteria": [
+        "JavaScript bundles are minified and optimized",
+        "CSS is minified and purged of unused styles",
+        "Images and static assets are compressed",
+        "Source maps are generated for debugging"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Enable Tailwind CSS purge configuration to remove unused styles in production builds. Ensure content paths correctly match all component files for proper CSS tree-shaking."
+        },
+        {
+          "path": "frontend/vite.config.ts",
+          "operation": "modify",
+          "description": "Configure build.minify, build.sourcemap, and build.cssMinify options. Add imagetools or sharp plugin configuration for automatic image optimization of generated assets in frontend/public/assets/generated/."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Review and optimize custom CSS, removing any unused styles or development-only utilities. Ensure theme variables are production-ready."
+        }
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "summary": "Verify Internet Identity authentication flows work in production environment",
+      "acceptanceCriteria": [
+        "Login functionality works with production Internet Identity service",
+        "Logout functionality completes successfully",
+        "Authentication state persists across page refreshes",
+        "No authentication errors in production console"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useInternetIdentity.ts",
+          "operation": "modify",
+          "description": "Update Internet Identity configuration to use production identity provider URL (https://identity.ic0.app). Ensure AuthClient options include proper maxTimeToLive and derivationOrigin for production deployment. Add error handling for production authentication edge cases."
+        },
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Add production-specific error handling and user feedback for authentication failures. Ensure login/logout UI states are clear and functional in production environment."
+        }
+      ]
+    },
+    {
+      "id": "REQ-20",
+      "summary": "Update all external URLs and resource references to production-ready values",
+      "acceptanceCriteria": [
+        "All API endpoints point to production backend",
+        "Social media links are correct and functional",
+        "External resource URLs are production-appropriate",
+        "No development/localhost references remain in code"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useActor.ts",
+          "operation": "modify",
+          "description": "Update backend actor creation to use production canister IDs from environment variables. Remove any hardcoded localhost or development URLs. Ensure proper host configuration for mainnet."
+        },
+        {
+          "path": "frontend/src/components/Footer.tsx",
+          "operation": "modify",
+          "description": "Verify all social media links point to production URLs. Ensure caffeine.ai attribution link with UTM tracking is correct and functional for production environment."
+        },
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Review and update meta tags for production deployment including canonical URL, Open Graph tags, and any CDN references. Ensure no development-only scripts or references remain."
+        },
+        {
+          "path": "frontend/src/main.tsx",
+          "operation": "modify",
+          "description": "Review React Query configuration for production-appropriate caching, retry logic, and error handling. Ensure Internet Identity provider initialization uses production settings."
+        }
+      ]
+    }
+  ]
+}
